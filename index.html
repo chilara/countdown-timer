@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="hero-section">
+      <p class="lsi"><strong>LAUNCH</strong> STARTING IN</p>
+      <div class="timer">
+        <div class="child-timer">
+          <h4 class="num num-hours">00</h4>
+          <span>hours</span>
+        </div>
+
+        <p class="divider">:</p>
+
+        <div class="child-timer">
+          <h4 class="num num-mins">00</h4>
+          <span>minutes</span>
+        </div>
+
+        <p class="divider">:</p>
+
+        <div class="child-timer">
+          <h4 class="num num-secs">00</h4>
+          <span>secs</span>
+        </div>
+      </div>
+    </div>
+    <input type="number" class="input" placeholder="Enter value in seconds" />
+    <div class="btns">
+      <button class="start" onclick="startTimer()">START</button>
+      <button onclick="pauseTimer()" disabled="true" class="pause">PAUSE</button>
+      <button onclick="resetTimer()" class="reset">RESET</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

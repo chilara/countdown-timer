@@ -1,0 +1,100 @@
+body {
+  background-image: url(https://cdn.thewire.in/wp-content/uploads/2021/04/23204300/2021-04-23T104236Z_1_LYNXMPEH3M0IQ_RTROPTP_4_SPACE-EXPLORATION-SPACEX.jpg);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  opacity: 1;
+}
+
+.hero-section {
+  text-align: center;
+}
+
+.lsi {
+  margin-top: 7%;
+  color: white;
+  font-size: xx-large;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  gap: 2%;
+  align-items: center;
+}
+
+.child-timer {
+  display: flex;
+  flex-direction: column;
+  background-color: #ff6d02;
+  color: white;
+  width: 12rem;
+  height: 12rem;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.num {
+  font-size: 50px;
+  color: #f0f2e3;
+}
+
+span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d4e2d4;
+}
+
+.divider {
+  color: #d4e2d4;
+  font-size: 70px;
+}
+
+.btns {
+  text-align: center;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.input {
+  text-align: center;
+  margin-top: 7%;
+  margin-left: 43%;
+  background-color: #faedc6;
+  padding: 20px;
+  border-radius: 5px;
+  color: #ff6d02;
+  height: 10px;
+  text-align: center;
+  border: none;
+}
+
+.start,
+.pause,
+.reset {
+  background-color: #faedc6;
+  padding: 20px;
+  border-radius: 5px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #ff6d02;
+  height: 5px;
+  text-align: center;
+  border: none;
+}
+
+
+.pause{
+
+  cursor: not-allowed;
+}
+
+
+::placeholder {
+  color: #ff6d02;
+  opacity: 0.6; 
+}
