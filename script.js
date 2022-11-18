@@ -70,9 +70,7 @@ const startTimer = () => {
   document.querySelector(".input").value = "";
   let { numberOfHours, numberOfMinutes, numberOfSeconds } =
     calculateNumberOfHoursMinutesSeconds(inputValue);
-  if (numberOfHours == 0 && numberOfMinutes == 0 && numberOfSeconds == 0) {
-    return;
-  }
+ 
 
 
   intervalId = setInterval(() => {
