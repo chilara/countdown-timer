@@ -59,12 +59,12 @@ const calculateNumberOfHoursMinutesSeconds = (time) => {
 // 3rd function
 const startTimer = () => {
   inputValue = Number(document.querySelector(".input").value);
-  if (!inputValue) {
+  if (inputValue == "") {
     alert("Enter number of seconds to count down from");
     return;
   }
   document.querySelector(".pause").disabled = false;
-  document.querySelector(".pause").style.cursor = "auto";
+  document.querySelector(".pause").style.cursor = "pointer";
   document.querySelector(".start").disabled = true;
   document.querySelector(".start").style.cursor = "not-allowed";
   document.querySelector(".input").value = "";
@@ -85,6 +85,8 @@ const startTimer = () => {
     document.querySelector(".num-mins").innerHTML = doubleDigitFormatter(numberOfMinutes);
     document.querySelector(".num-secs").innerHTML = doubleDigitFormatter(numberOfSeconds);
     if (numberOfHours == 0 && numberOfMinutes == 0 && numberOfSeconds == 0) {
+      document.querySelector(".start").disabled = false;
+      document.querySelector(".start").style.cursor = "pointer";
       clearInterval(intervalId);
     }
   }, 1000);
@@ -134,6 +136,8 @@ const pauseTimer = () => {
 const resetTimer = () => {
   clearInterval(intervalId);
   document.querySelector(".start").innerHTML = "START";
+  document.querySelector(".start").disabled = false;
+  document.querySelector(".start").style.cursor = "pointer";
   document.querySelector(".num-hours").innerHTML = "00";
   document.querySelector(".num-mins").innerHTML = "00";
   document.querySelector(".num-secs").innerHTML = "00";
