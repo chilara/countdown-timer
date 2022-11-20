@@ -59,7 +59,7 @@ const calculateNumberOfHoursMinutesSeconds = (time) => {
 // 3rd function
 const startTimer = () => {
   inputValue = Number(document.querySelector(".input").value);
-  if (inputValue == "") {
+  if (!inputValue) {
     alert("Enter number of seconds to count down from");
     return;
   }
@@ -70,7 +70,7 @@ const startTimer = () => {
   document.querySelector(".input").value = "";
   let { numberOfHours, numberOfMinutes, numberOfSeconds } =
     calculateNumberOfHoursMinutesSeconds(inputValue);
- 
+  
 
 
   intervalId = setInterval(() => {
@@ -85,6 +85,8 @@ const startTimer = () => {
     if (numberOfHours == 0 && numberOfMinutes == 0 && numberOfSeconds == 0) {
       document.querySelector(".start").disabled = false;
       document.querySelector(".start").style.cursor = "pointer";
+      document.querySelector(".pause").disabled = true;
+      document.querySelector(".pause").style.cursor = "not-allowed";
       clearInterval(intervalId);
     }
   }, 1000);
@@ -101,6 +103,8 @@ const pauseTimer = () => {
     let { numberOfHours, numberOfMinutes, numberOfSeconds } =
       calculateNumberOfHoursMinutesSeconds(inputValue);
     if (numberOfHours == 0 && numberOfMinutes == 0 && numberOfSeconds == 0) {
+      document.querySelector(".start").disabled = false;
+      document.querySelector(".start").style.cursor = "pointer";
       document.querySelector(".pause").disabled = true;
       document.querySelector(".pause").style.cursor = "not-allowed";
       return;
@@ -116,6 +120,10 @@ const pauseTimer = () => {
       document.querySelector(".num-mins").innerHTML = doubleDigitFormatter(numberOfMinutes);
       document.querySelector(".num-secs").innerHTML = doubleDigitFormatter(numberOfSeconds);
       if (numberOfHours == 0 && numberOfMinutes == 0 && numberOfSeconds == 0) {
+      document.querySelector(".start").disabled = false;
+      document.querySelector(".start").style.cursor = "pointer";
+      document.querySelector(".pause").disabled = true;
+      document.querySelector(".pause").style.cursor = "not-allowed";
         clearInterval(intervalId);
       }
     }, 1000);
